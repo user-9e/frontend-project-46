@@ -1,0 +1,29 @@
+{
+  "name": "@hexlet/code",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "[![Actions Status](https://github.com/user-9e/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/user-9e/frontend-project-46/actions)",
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/user-9e/frontend-project-46.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/user-9e/frontend-project-46/issues"
+  },
+  "homepage": "https://github.com/user-9e/frontend-project-46#readme",
+  "dependencies": {
+    "commander": "^11.1.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
