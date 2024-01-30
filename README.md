@@ -18,5 +18,5 @@ make install
 ## Usage
 Generating difference of 2 files, format not specified.
 
-<script async id="asciicast-kwurgqBe5Ft75vRurKAj5FDT2" src="https://asciinema.org/a/kwurgqBe5Ft75vRurKAj5FDT2.js"></script>
+[![asciicast](https://asciinema.org/a/kwurgqBe5Ft75vRurKAj5FDT2.svg)](https://asciinema.org/a/kwurgqBe5Ft75vRurKAj5FDT2)
 
