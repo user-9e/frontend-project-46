@@ -22,7 +22,9 @@
   "homepage": "https://github.com/user-9e/frontend-project-46#readme",
   "dependencies": {
     "commander": "^11.1.0",
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "lodash": "^4.17.21",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "jest": "^29.7.0"
