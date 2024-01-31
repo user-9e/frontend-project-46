@@ -28,6 +28,7 @@ export default (filepath1, filepath2) => {
   }
   const prettyResult = result.map((s) => `  ${s}`).join('\n');
 
+  console.log(`{\n${prettyResult}\n}`);
   return `{\n${prettyResult}\n}`;
 };
 
