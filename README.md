@@ -12,8 +12,8 @@ MacOS, Linux, Windows
 make install
 ```
 
-### Hexlet tests and linter status:
-[![Actions Status](https://github.com/user-9e/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/user-9e/frontend-project-46/actions)
+### Badges:
+[![Actions Status]
 
 ## Usage
 Generating difference of 2 files, format not specified.
