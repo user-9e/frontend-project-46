@@ -13,4 +13,7 @@ lint:
 test:
 		npm test
 
+test-coverage:
+	npm test -- --coverage --watch --coverageProvider=v8
+
 .PHONY: test
