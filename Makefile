@@ -12,3 +12,5 @@ lint:
 
 test:
 		npm test
+
+.PHONY: test
