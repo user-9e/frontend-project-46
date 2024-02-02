@@ -11,7 +11,6 @@ program
   .argument('<filepath1>', 'path to file 1')
   .argument('<filepath2>', 'path to file 2')
   .action((filepath1, filepath2) => {
-
     const result = gendiff(filepath1, filepath2);
     return result;
   });

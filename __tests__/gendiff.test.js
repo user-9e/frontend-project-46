@@ -16,3 +16,10 @@ test('gendiff', () => {
   const result = gendiff(file1, file2);
   expect(result).toEqual(readFile('output.txt'));
 });
+
+test('yaml gendiff', () => {
+  const file1 = getFixturePath('file1.yml');
+  const file2 = getFixturePath('file2.yml');
+  const result = gendiff(file1, file2);
+  expect(result).toEqual(readFile('output.txt'));
+});

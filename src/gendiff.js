@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import parsing from '../parsing.js';
+import parsing from './parser.js';
 
 export default (filepath1, filepath2) => {
   const data1 = { ...parsing(filepath1) };
@@ -31,7 +31,3 @@ export default (filepath1, filepath2) => {
   console.log(`{\n${prettyResult}\n}`);
   return `{\n${prettyResult}\n}`;
 };
-
-// const formatting = (frmt, diff) => {
-
-// }
