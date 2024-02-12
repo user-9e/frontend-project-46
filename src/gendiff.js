@@ -10,24 +10,35 @@ const iter = (data1, data2, depth = 1) => {
 
   const result = [];
 
-  for (const key of uniqKeys) {
+  uniqKeys.forEach((key) => {
     if (_.isObject(data1[key]) && (_.isObject(data2[key]))) {
-      result.push({ status : ' ', depth, key, value : '{'});
+      result.push({
+        status: ' ', depth, key, value: '{',
+      });
       result.push(...iter(data1[key], data2[key], depth + 1));
-    }
-    else if (!keys1.includes(key)) {
-      result.push({ status : '+', depth, key, value : data2[key]});
+    } else if (!keys1.includes(key)) {
+      result.push({
+        status: '+', depth, key, value: data2[key],
+      });
     } else if (keys1.includes(key) && keys2.includes(key)) {
       if (data1[key] === data2[key]) {
-        result.push({ status : ' ', depth, key, value : data1[key]});
+        result.push({
+          status: ' ', depth, key, value: data1[key],
+        });
       } else {
-        result.push({ status : '-', depth, key, value : data1[key]});
-        result.push({ status : '+', depth, key, value : data2[key]});
+        result.push({
+          status: '-', depth, key, value: data1[key],
+        });
+        result.push({
+          status: '+', depth, key, value: data2[key],
+        });
       }
     } else if (keys1.includes(key) && !keys2.includes(key)) {
-      result.push({ status : '-', depth, key, value : data1[key]});
+      result.push({
+        status: '-', depth, key, value: data1[key],
+      });
     }
-  }
+  });
   return result;
 };
 
