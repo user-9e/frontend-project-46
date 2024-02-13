@@ -5,38 +5,24 @@ import parsing from './parser.js';
 const iter = (data1, data2, depth = 1) => {
   const keys1 = Object.keys(data1);
   const keys2 = Object.keys(data2);
-  const allKeys = _.sortBy(keys1.concat(keys2));
-  const uniqKeys = _.uniq(allKeys);
-
+  const uniqKeys = _.uniq(_.sortBy(keys1.concat(keys2)));
   const result = [];
 
   uniqKeys.forEach((key) => {
     if (_.isObject(data1[key]) && (_.isObject(data2[key]))) {
-      result.push({
-        status: ' ', depth, key, value: '{',
-      });
+      result.push({ status: ' ', depth, key, value: '{' });
       result.push(...iter(data1[key], data2[key], depth + 1));
     } else if (!keys1.includes(key)) {
-      result.push({
-        status: '+', depth, key, value: data2[key],
-      });
+      result.push({ status: '+', depth, key, value: data2[key] });
     } else if (keys1.includes(key) && keys2.includes(key)) {
       if (data1[key] === data2[key]) {
-        result.push({
-          status: ' ', depth, key, value: data1[key],
-        });
+        result.push({ status: ' ', depth, key, value: data1[key] });
       } else {
-        result.push({
-          status: '-', depth, key, value: data1[key],
-        });
-        result.push({
-          status: '+', depth, key, value: data2[key],
-        });
+        result.push({ status: '-', depth, key, value: data1[key] });
+        result.push({ status: '+', depth, key, value: data2[key] });
       }
     } else if (keys1.includes(key) && !keys2.includes(key)) {
-      result.push({
-        status: '-', depth, key, value: data1[key],
-      });
+      result.push({ status: '-', depth, key, value: data1[key] });
     }
   });
   return result;

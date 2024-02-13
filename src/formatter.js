@@ -10,17 +10,14 @@ const stylish = (diff) => {
       if (!_.isObject(currentItem)) {
         return `${currentItem}`;
       }
-
       const lines = Object
         .entries(currentItem)
         .map(([key, val]) => `${currentIndent}${key}: ${iter(val, d + 1)}`);
-
       const result = [
         '{',
         ...lines,
         `${bracketIndent}}`,
       ].join('\n');
-
       return result;
     };
     return iter(value, depth);
