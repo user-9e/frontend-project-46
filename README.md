@@ -1,4 +1,4 @@
-[![Node CI](https://github.com/user-9e/frontend-project-46/workflows/Node%20CI/badge.svg)](https://github.com/user-9e/frontend-project-46/actions)
+[![Node CI](https://github.com/user-9e/frontend-project-46/workflows/jest-test.yml/badge.svg)](https://github.com/user-9e/frontend-project-46/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/4028236515d19f6a8099/maintainability)](https://codeclimate.com/github/user-9e/frontend-project-46/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/4028236515d19f6a8099/test_coverage)](https://codeclimate.com/github/user-9e/frontend-project-46/test_coverage)
 
