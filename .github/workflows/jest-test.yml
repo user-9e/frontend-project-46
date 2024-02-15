@@ -1,0 +1,41 @@
+# Name of workflow
+name: Node CI
+
+# Trigger the workflow on push or pull request
+on:
+  - push
+  - pull_request
+
+env:
+  CI: true
+
+jobs:
+  build:
+
+    # The type of machine to run the job on
+    runs-on: ubuntu-latest
+
+    strategy:
+      # Node versions list
+      matrix:
+        node-version: [20.x]
+
+    steps:steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js 
+        uses: actions/setup-node@v4
+        with:
+          node-version: '16.x'
+      - name: npm install
+        run: 
+          npm install
+      - name: Run jest
+        run: 
+          make test
+      - name: Test & publish code coverage
+        uses: paambaati/codeclimate-action@v2.7.5
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CODE_TEST_COVERAGE }}
+        with:
+          coverageCommand: make test-coverage
+          debug: true

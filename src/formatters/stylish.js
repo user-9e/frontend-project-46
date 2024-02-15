@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-const stylish = (diff) => {
+export default (diff) => {
   const stringify = (value, depth, replacer = ' ', spacesCount = 4) => {
     const iter = (currentItem, d) => {
       const indentSize = (d + 1) * spacesCount;
@@ -30,7 +30,9 @@ const stylish = (diff) => {
     const previousDepth = stack.at(-2);
     const currentDepth = stack.at(-1);
     const addBracket = currentDepth < previousDepth;
-
+    if (item.status === '-+') {
+      return `${indent(item.depth)}- ${item.key}: ${stringify(item.value.old, item.depth)}\n${indent(item.depth)}+ ${item.key}: ${stringify(item.value.new, item.depth)}`;
+    }
     if (addBracket) {
       if (previousDepth - currentDepth === 1) {
         return `${indentForBracket(item.depth)}}\n${indent(item.depth)}${item.status} ${item.key}: ${stringify(item.value, item.depth)}`;
@@ -44,5 +46,3 @@ const stylish = (diff) => {
 
   return `{\n${result.join('\n')}\n}`;
 };
-
-export default stylish;

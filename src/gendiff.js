@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import stylish from './formatter.js';
+import pickFormat from './formatters/index.js';
 import parsing from './parser.js';
 
 const iter = (data1, data2, depth = 1) => {
@@ -18,8 +18,7 @@ const iter = (data1, data2, depth = 1) => {
       if (data1[key] === data2[key]) {
         result.push({ status: ' ', depth, key, value: data1[key] });
       } else {
-        result.push({ status: '-', depth, key, value: data1[key] });
-        result.push({ status: '+', depth, key, value: data2[key] });
+        result.push({ status: '-+', depth, key, value: { old: data1[key], new: data2[key] } });
       }
     } else if (keys1.includes(key) && !keys2.includes(key)) {
       result.push({ status: '-', depth, key, value: data1[key] });
@@ -28,11 +27,9 @@ const iter = (data1, data2, depth = 1) => {
   return result;
 };
 
-export default (filepath1, filepath2) => {
+export default (filepath1, filepath2, format) => {
   const data1 = { ...parsing(filepath1) };
   const data2 = { ...parsing(filepath2) };
-
-  const result = iter(data1, data2);
-  const prettyResult = stylish(result);
-  return prettyResult;
+  const diff = iter(data1, data2);
+  return pickFormat(diff, format);
 };

@@ -12,7 +12,7 @@ program
   .argument('<filepath2>', 'path to file 2')
   .action((filepath1, filepath2, options) => {
     const format = options.format;
-    const result = gendiff(filepath1, filepath2);
+    const result = gendiff(filepath1, filepath2, format);
     console.log(result);
     return result;
   });
