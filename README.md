@@ -19,4 +19,4 @@ make install
 ## Usage
 Generating difference of 2 files, format not specified.
 
-[![asciicast](https://asciinema.org/a/1wOhKiYRMbBugAjNXE0mxdsUc.svg)](https://asciinema.org/a/1wOhKiYRMbBugAjNXE0mxdsUc)
+[![asciicast](https://asciinema.org/a/rhk0BLVDvjZsfDLdyoqtnN0tb.svg)](https://asciinema.org/a/rhk0BLVDvjZsfDLdyoqtnN0tb)
