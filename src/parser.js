@@ -6,7 +6,7 @@ import fs from 'fs';
 export default (filepath) => {
   const curdir = process.cwd();
   const filePath = path.isAbsolute(filepath) ? filepath : path.join(curdir, '__fixtures__/', filepath);
-  
+
   const format = path.extname(filePath);
   const data = fs.readFileSync(filePath);
 
