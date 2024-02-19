@@ -4,7 +4,7 @@
 
 # Difference Generator
 
-Difference Generator allows you to compare 2 files and output the difference in one of the formats (string, yaml, plain).
+Difference Generator allows you to compare 2 files and output the difference in one of the formats (json, yaml, plain).
 
 ## Requirements
 
@@ -17,6 +17,6 @@ make install
 ```
 
 ## Usage
-Generating difference of 2 files, format not specified.
+Generate difference between 2 files and get the result in json, plain text or default format.
 
 [![asciicast](https://asciinema.org/a/MiyARubO4P00D0zANvqgdTXga.svg)](https://asciinema.org/a/MiyARubO4P00D0zANvqgdTXga)
