@@ -12,19 +12,13 @@ export default (diff) => {
         path.push(item.key);
         break;
       case 0:
-        path.pop();
-        path.push(item.key);
+        path.splice(-1, 1, item.key);
         break;
       case -1:
-        path.pop();
-        path.pop();
-        path.push(item.key);
+        path.splice(-2, 2, item.key);
         break;
       case -2:
-        path.pop();
-        path.pop();
-        path.pop();
-        path.push(item.key);
+        path.splice(-3, 3, item.key);
         break;
     }
     const currentPath = path.join('.');
