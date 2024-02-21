@@ -20,6 +20,8 @@ export default (diff) => {
       case -2:
         path.splice(-3, 3, item.key);
         break;
+      default:
+        path.push(item.key);
     }
     const currentPath = path.join('.');
     const typeCheck = (val) => {
@@ -31,7 +33,7 @@ export default (diff) => {
       return `${val}`;
     };
     if (item.status === '+') {
-        jsObject.added[currentPath] = typeCheck(item.value);
+      jsObject.added[currentPath] = typeCheck(item.value);
     } if (item.status === '-') {
       jsObject.deleted[currentPath] = typeCheck(item.value);
     } if (item.status === '-+') {

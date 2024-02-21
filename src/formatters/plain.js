@@ -18,6 +18,8 @@ export default (diff) => {
       case -2:
         path.splice(-3, 3, item.key);
         break;
+      default:
+        path.push(item.key);
     }
     const complexCheck = (val) => {
       if (_.isObject(val)) {
@@ -33,6 +35,7 @@ export default (diff) => {
     } if (item.status === '-+') {
       return `Property '${path.join('.')}' was updated. From ${complexCheck(item.value.old)} to ${complexCheck(item.value.new)}`;
     }
+    return undefined;
   });
   const prettyResult = result.filter((item) => item !== undefined);
   const final = [

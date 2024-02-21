@@ -7,5 +7,6 @@ export default (diff, format) => {
     return json(diff);
   } if (format === 'plain') {
     return plain(diff);
-  } else return stylish(diff);
+  }
+  return stylish(diff);
 };
